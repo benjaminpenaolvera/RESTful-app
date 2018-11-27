@@ -18,5 +18,9 @@ class App < Sinatra::Base
     'This is the root app'
   end
 
+  get '/contact' do
+    'benjamin.pena.olvera@gmail.com'
+  end
+
   register Routes::Api::V1::Sample
 end
