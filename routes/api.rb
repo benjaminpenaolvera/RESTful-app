@@ -4,6 +4,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'json'
 require 'nokogiri'
+
 require './routes/v1/sample'
 require './models'
 
@@ -15,11 +16,19 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    'This is the root app'
+    'Welcome to RESTful-app'
   end
 
   get '/contact' do
-    'benjamin.pena.olvera@gmail.com'
+    ERB.new("<h1>benjamin.pena.olvera@gmail.com</h1>").result(binding)
+  end
+
+  get '/params/:name' do
+    "Hello #{params["name"]}"
+  end
+  
+  get '/params2/:name' do
+    params.inspect
   end
 
   register Routes::Api::V1::Sample

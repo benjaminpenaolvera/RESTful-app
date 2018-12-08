@@ -2,7 +2,7 @@ require_relative 'base_controller'
 
 class SampleController <  BaseController
   class << self
-    def message
+    def users
       @users = User.all
     end
   end

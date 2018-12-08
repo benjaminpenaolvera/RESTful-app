@@ -5,8 +5,8 @@ module Routes
     module V1
       module Sample
         def self.registered(app)
-          app.get '/sample' do
-            { status: SampleController.message }.to_json
+          app.get '/v1/users' do
+            { status: SampleController.users }.to_json
           end
         end
       end
